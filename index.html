@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page V6</title>
+    <title>SilverSniper | Main Page V6</title>
+    <meta name="description" content="SilverSniper: Virtualization Expert, DJ, Gamer, and Web Designer. Explore projects, main pages, disclaimers, and services including PC building, virtualization, DJing, and web design.">
+    <meta name="keywords" content="SilverSniper, Portfolio, Virtualization, Proxmox, ESXi, DJ, Gamer, Web Design, HTML, CSS, PC Building, FL Studio, Music, Consulting, Projects, Main Pages, Disclaimers, Services">
+    <meta name="author" content="SilverSniper">
+    <link rel="canonical" href="https://silversnipers.com/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SilverSniper | Main Page V6">
+    <meta property="og:description" content="SilverSniper: Virtualization Expert, DJ, Gamer, and Web Designer. Explore projects, main pages, disclaimers, and services.">
+    <meta property="og:image" content="https://silversnipers.com/assets/MasterUntitled.jpg">
+    <meta property="og:image:alt" content="SilverSniper Portfolio Banner">
+    <meta property="og:url" content="https://silversnipers.com/">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SilverSniper | Main Page V6">
+    <meta name="twitter:description" content="SilverSniper: Virtualization Expert, DJ, Gamer, and Web Designer. Explore projects, main pages, disclaimers, and services.">
+    <meta name="twitter:image" content="https://silversnipers.com/assets/MasterUntitled.jpg">
+    <meta name="twitter:image:alt" content="SilverSniper Portfolio Banner">
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00c3ff">
+    <meta name="theme-color" content="#181c24">
 </head>
 <body>
     <header>
@@ -109,10 +133,10 @@
                 <div class="content20 fade-item" style="--animation-order:18;" onclick="window.open('https://sebys-page-10-assets-page.netlify.app/','_blank')"><h1 style="--animation-order: 18;">Page 10</h1></div>
                 <div class="content21 fade-item" style="--animation-order:19;" onclick="window.open('https://seby-page-11.netlify.app/','_blank')"><h1 style="--animation-order: 19;">Page 11</h1></div>
                 <div class="content22 fade-item" style="--animation-order:20;" onclick="window.open('https://seby-page-12.netlify.app/','_blank')"><h1 style="--animation-order: 20;">Page 12 Old Main Page</h1></div>
-                <div class="content23 fade-item" style="--animation-order:21;" onclick="window.open('https://seby-page-13.netlify.app/','_blank')"><h1 style="--animation-order: 21;">Page 13</h1></div>
-                <div class="content24 fade-item" style="--animation-order:22;" onclick="window.open('https://seby-page-14.netlify.app/','_blank')"><h1 style="--animation-order: 22;">Page 14</h1></div>
+                <div class="content23 fade-item" style="--animation-order:21;" onclick="window.open('https://sebys-page-13.netlify.app/','_blank')"><h1 style="--animation-order: 21;">Page 13</h1></div>
+                <div class="content24 fade-item" style="--animation-order:22;" onclick="window.open('https://sebys-page-14.netlify.app/','_blank')"><h1 style="--animation-order: 22;">Page 14</h1></div>
                 <div class="content25 fade-item" style="--animation-order:23;" onclick="window.open('https://seby-page-15.netlify.app/','_blank')"><h1 style="--animation-order: 23;">Page 15</h1></div>
-                <div class="content26 fade-item" style="--animation-order:24;" onclick="window.open('https://seby-page-16-forgotten.netlify.app/','_blank')"><h1 style="--animation-order: 24;">Page 16 | Forgotten</h1></div>
+                <div class="content26 fade-item" style="--animation-order:24;" onclick="window.open('https://sebys-page-16.netlify.app/','_blank')"><h1 style="--animation-order: 24;">Page 16 | Forgotten</h1></div>
             </div>
         </div>
     </section>
@@ -146,5 +170,36 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+// Smooth scroll and center section title on navigation click
+function scrollToSectionCenterTitle(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    const title = section.querySelector('h2');
+    if (!title) return;
+    const rect = title.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+    // Calculate the offset to center the title in the viewport
+    const offset = rect.top + scrollY - (window.innerHeight / 2) + (rect.height / 2);
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+}
+// Attach to nav links
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('nav a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const sectionId = href.substring(1);
+                if (document.getElementById(sectionId)) {
+                    e.preventDefault();
+                    scrollToSectionCenterTitle(sectionId);
+                    // Optionally update URL hash
+                    history.replaceState(null, '', href);
+                }
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

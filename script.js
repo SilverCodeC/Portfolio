@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     makeMasterDivsClickable('mainpages');
     makeMasterDivsClickable('disclaimers');
     // Typing animation for About Me
-    const aboutText = "Creative DJ, virtualization enthusiast, and passionate gamer. I blend music, technology, and immersive experiences—skilled in live DJ sets, building virtual environments, and competitive gaming. Always exploring the latest in music tech, virtual machines, and gaming trends.";
+    const aboutText = "Creative DJ, virtualization enthusiast, and passionate gamer. I blend music, technology, building virtual environments, and competitive gaming. Always exploring the latest in music tech, virtual machines, and gaming trends.";
     const aboutElem = document.getElementById('about-typed');
     let aboutIdx = 0;
     function typeAbout() {
