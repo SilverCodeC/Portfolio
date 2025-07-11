@@ -351,6 +351,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0; /* Ensure no margin for consistent spacing */
 }
 .master > div:hover {
     transform: scale(1.06) rotate(-1deg);
@@ -360,7 +361,7 @@ footer {
 .master h1 {
     font-size: 1.2rem;
     font-weight: 700;
-    margin: 1.2rem 0 0.2rem 0;
+    margin: 0;
     color: #b2fefa;
     letter-spacing: 1px;
     cursor: pointer;
@@ -423,7 +424,6 @@ footer {
     font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: 1.5px;
-    margin: 1.2rem 0 0.2rem 0;
     color: #b2fefa;
     text-shadow: 0 2px 12px #00c3ff44;
     transition: color 0.2s, text-shadow 0.2s;
@@ -572,4 +572,41 @@ footer {
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
+}
+
+/* Stylize clickable card links in Projects, Main Pages, and Disclaimers */
+.master a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.master a:hover, .master a:focus {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  background: #f0f4ff;
+}
+.master a div {
+  padding: 18px 24px;
+  border-radius: 12px;
+  background: #fff;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+.master a:hover div, .master a:focus div {
+  background: #e6edff;
+}
+.master a h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Remove margin from all .master > div and .master > * selectors */
+.master > div,
+.master > * {
+  margin: 0 !important;
 }
